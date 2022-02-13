@@ -1,0 +1,216 @@
+{
+  "name": "Ravunni",
+  "children": [
+    {
+      "name": "Lakshmi",
+      "relation": "Spouse",
+      "children": [
+        {
+          "name": "Gopalan",
+          "icon": "./images/dummy.png",
+          "children": [
+            {
+              "name": "Kochammu",
+              "relation": "Spouse",
+              "children": [
+                {
+                  "name": "Subrahmanyan",
+                  "children": [
+                    {
+                      "name": "Sona",
+                      "relation": "Spouse",
+                      "children": [
+                        {
+                          "name": "Sathyan"
+                        },
+                        {
+                          "name": "Kranthi"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Kochu Raman"
+                },
+                {
+                  "name": "Ambujam",
+                  "children": [
+                    {
+                      "name": "P V Krishnan",
+                      "relation": "Spouse",
+                      "children": [
+                        {
+                          "name": "Aswathi"
+                        },
+                        {
+                          "name": "Archana"
+                        },
+                        {
+                          "name": "Athira"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Balakrishan",
+                  "icon": "./images/balakrishnan.png",
+                  "children": [
+                    {
+                      "name": "Sarala",
+                      "icon": "./images/sarala.png",
+                      "relation": "Spouse",
+                      "children": [
+                        {
+                          "name": "Abhi",
+                          "icon": "./images/abhi.png",
+                          "children": [
+                            {
+                              "name": "Sarika",
+                              "icon": "./images/sarika.png",
+                              "relation": "Spouse",
+                              "children": [
+                                {
+                                  "name": "Josh Vega",
+                                  "icon": "./images/josh.png",
+                                  "relation": "Child"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Akhi",
+                          "icon": "./images/akhi.png",
+                          "children": [
+                            {
+                              "name": "Preetha",
+                              "icon": "./images/preetha.png",
+                              "relation": "Spouse",
+                              "children": [
+                                {
+                                  "name": "Avni",
+                                  "icon": "./images/avni.png",
+                                  "relation": "Child"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Subhadra",
+                  "children": [
+                    {
+                      "name": "Thankappan",
+                      "relation": "Spouse",
+                      "children": [
+                        {
+                          "name": "Anju"
+                        },
+                        {
+                          "name": "Anu"
+                        },
+                        {
+                          "name": "Avani"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Ramachandran",
+                  "children": [
+                    {
+                      "name": "Sreeja",
+                      "relation": "Spouse",
+                      "children": [
+                        {
+                          "name": "Anisha"
+                        },
+                        {
+                          "name": "Athul"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Girjan",
+                  "children": [
+                    {
+                      "name": "Bindu",
+                      "relation": "Spouse",
+                      "children": [
+                        {
+                          "name": "Aswin"
+                        },
+                        {
+                          "name": "Adarsh"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Mohandas"
+                },
+                {
+                  "name": "Ajith"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ayappan",
+          "children": [
+            {
+              "name": "Janu"
+            },
+            {
+              "name": "Ravunni"
+            },
+            {
+              "name": "Sarojini"
+            },
+            {
+              "name": "Narayanan"
+            },
+            {
+              "name": "Vilasini"
+            },
+            {
+              "name": "Karthyani"
+            },
+            {
+              "name": "Sivasankaran"
+            },
+            { "name": "Kamalam" },
+            {
+              "name": "Beena"
+            }
+          ]
+        },
+        {
+          "name" : "Kochu Raman",
+          "children" :[
+            {
+              "name":"Thundamma",
+              "relation":"Spouse",
+              "children":[
+                {
+                  "name" : "Thankamani"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
