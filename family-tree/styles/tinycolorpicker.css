@@ -1,0 +1,59 @@
+/* COLORPICKER 1 EXAMPLE */
+.colorPicker
+{
+    width:          15px;
+    height:         15px;
+    position: relative;
+    clear: both;
+    -webkit-border-radius: 27px;
+    -moz-border-radius: 27px;
+    border-radius: 27px;
+    border:         1px solid #ccc;
+}
+
+.colorPicker .track {
+    background:     #EFEFEF url(text-color3.png) no-repeat 50% 50%;
+    height:         150px;
+    width:          150px;
+    position:       absolute;
+    cursor:         crosshair;
+    float:          left;
+    left:           -68px;
+    top:            -68px;
+    display:        none;
+    border:         1px solid #ccc;
+    z-index:        10;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    border-radius: 150px;
+
+}
+
+/* Beginning Small Circle  Color*/
+.colorPicker .color {
+    width:          15px;
+    height:         15px;
+    border:         1px solid #ccc;
+    display:        block;
+    position:       relative;
+    z-index:        11;
+    background-color: #EFEFEF;
+    -webkit-border-radius: 27px;
+    -moz-border-radius: 27px;
+    border-radius: 27px;
+    cursor:         pointer;
+}
+/* Beginning Small Circle   Color Inner*/
+.colorPicker .colorInner {
+    width:          15px;
+    height:         15px;
+    -webkit-border-radius: 27px;
+    -moz-border-radius: 27px;
+    border-radius: 27px;
+    
+  /*  border:         1px solid #ccc;*/
+}
+
+
+
+
