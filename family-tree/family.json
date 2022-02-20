@@ -12,6 +12,15 @@
             {
               "name": "Kochammu",
               "relation": "Spouse",
+              "parent": [
+                { "name" : "Kochu Kuttan",
+                  "relation" : "Father"
+                },
+                {
+                  "name" : "Kali",
+                  "relation" : "Mother"
+                }
+              ],
               "children": [
                 {
                   "name": "Subrahmanyan",
@@ -197,14 +206,14 @@
           ]
         },
         {
-          "name" : "Kochu Raman",
-          "children" :[
+          "name": "Kochu Raman",
+          "children": [
             {
-              "name":"Thundamma",
-              "relation":"Spouse",
-              "children":[
+              "name": "Thundamma",
+              "relation": "Spouse",
+              "children": [
                 {
-                  "name" : "Thankamani"
+                  "name": "Thankamani"
                 }
               ]
             }

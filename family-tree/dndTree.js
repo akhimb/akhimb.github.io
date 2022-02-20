@@ -30,14 +30,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 treeJSON = d3.json("family.json", function (error, treeData) {
 
     // Calculate total nodes, max label length
-    var margin = {
-            top: 20,
-            right: 120,
-            bottom: 20,
-            left: 120
-        },
-        width = 960 - margin.right - margin.left,
-        height = 800 - margin.top - margin.bottom;
     var totalNodes = 0;
     var maxLabelLength = 0;
     // variables for drag/drop
@@ -52,8 +44,8 @@ treeJSON = d3.json("family.json", function (error, treeData) {
     var root;
 
     // size of the diagram
-    var viewerWidth = $(document).width();
-    var viewerHeight = $(document).height();
+    var viewerWidth = $(document).width() - 50;
+    var viewerHeight = $(document).height() - 50;
 
     var tree = d3.layout.tree()
         .size([viewerHeight, viewerWidth]);
@@ -143,7 +135,7 @@ treeJSON = d3.json("family.json", function (error, treeData) {
         d3.selectAll('.ghostCircle').attr('class', 'ghostCircle show');
         d3.select(domNode).attr('class', 'node activeDrag');
 
-        svgGroup.selectAll("g.node").sort(function (a, b) { // select the parent and sort the path's
+        svgGroup.selectAll("g.node").sort(function (a) { // select the parent and sort the path's
             if (a.id != draggingNode.id) return 1; // a is not the hovered element, send "a" to the back
             else return -1; // a is the hovered element, bring "a" to the front
         });
@@ -159,7 +151,7 @@ treeJSON = d3.json("family.json", function (error, treeData) {
             nodesExit = svgGroup.selectAll("g.node")
                 .data(nodes, function (d) {
                     return d.id;
-                }).filter(function (d, i) {
+                }).filter(function (d) {
                     if (d.id == draggingNode.id) {
                         return false;
                     }
@@ -169,7 +161,7 @@ treeJSON = d3.json("family.json", function (error, treeData) {
 
         // remove parent link
         parentLink = tree.links(tree.nodes(draggingNode.parent));
-        svgGroup.selectAll('path.link').filter(function (d, i) {
+        svgGroup.selectAll('path.link').filter(function (d) {
             if (d.target.id == draggingNode.id) {
                 return true;
             }
@@ -301,7 +293,7 @@ treeJSON = d3.json("family.json", function (error, treeData) {
         selectedNode = d;
         updateTempConnector();
     };
-    var outCircle = function (d) {
+    var outCircle = function () {
         selectedNode = null;
         updateTempConnector();
     };
@@ -413,7 +405,7 @@ treeJSON = d3.json("family.json", function (error, treeData) {
         var nodeEnter = node.enter().append("g")
             .call(dragListener)
             .attr("class", "node")
-            .attr("transform", function (d) {
+            .attr("transform", function () {
                 return "translate(" + source.y0 + "," + source.x0 + ")";
             })
             .on('click', click);
@@ -498,7 +490,7 @@ treeJSON = d3.json("family.json", function (error, treeData) {
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
             .duration(duration)
-            .attr("transform", function (d) {
+            .attr("transform", function () {
                 return "translate(" + source.y + "," + source.x + ")";
             })
             .remove();
@@ -518,7 +510,7 @@ treeJSON = d3.json("family.json", function (error, treeData) {
         // Enter any new links at the parent's previous position.
         link.enter().insert("path", "g")
             .attr("class", "link")
-            .attr("d", function (d) {
+            .attr("d", function () {
                 var o = {
                     x: source.x0,
                     y: source.y0
@@ -537,7 +529,7 @@ treeJSON = d3.json("family.json", function (error, treeData) {
         // Transition exiting nodes to the parent's new position.
         link.exit().transition()
             .duration(duration)
-            .attr("d", function (d) {
+            .attr("d", function () {
                 var o = {
                     x: source.x,
                     y: source.y
