@@ -7,59 +7,141 @@
 </head>
 <body>
 
-	<div class="container">
-		<div class="hero">
-			<h1 class="name"><strong>Akhi</strong> M B</h1>
-			<span class="job-title">Developer</span>
-			<span class="email">mail@akhimb.com</span>
+	<!-- Combined Container with Open Book on Left and Library on Right -->
+	<div class="combined-container">
+		<!-- Left Side: Open Book -->
+		<div class="left-section">
+			<div class="open-book">
+				<!-- Left Page -->
+				<div class="book-page left-page">
+					<div class="page-content">
+						<div class="hero">
+							<h1 class="name"><strong>Akhi</strong> M B</h1>
+							<span class="job-title">Technical Lead</span>
+							<span class="email">mail@akhimb.com</span>
 
-			<h2 class="lead"> Full Stack Developer </h2>
+							<h2 class="lead"> Full Stack Developer @ RedBlack, Infopark, Kochi </h2>
+							<p class="previous-experience">Worked as Project Engineer @ CDAC, Trivandrum From May 2014 - Dec 2020</p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Right Page -->
+				<div class="book-page right-page">
+					<div class="page-content">
+						<div class="sections">
+							<h2 class="section-title">Skills</h2>
+
+							<div class="list-card">
+								<span class="exp">+ 10 years</span>
+								<div>
+									<h3>OOPS & frameworks</h3>
+									<span>C#, C++, Typescript, Aurelia, WPF, Node, Express js</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Book Spine/Binding -->
+				<div class="book-spine-center"></div>
+			</div>
 		</div>
-	</div>
 
-<!-- Skills and intrest section -->
-	<div class="container">
-
-		<div class="sections">
-			<h2 class="section-title">Skills</h2>
-
-			<div class="list-card">
-				<span class="exp">+ 7 years</span>
-				<div>
-					<h3>Object oriented programming & frameworks</h3>
-					<span>C#, C++, Typescript, WPF, Node js</span>
+		<!-- Right Side: Projects Library -->
+		<div class="right-section">
+			<div class="library-section">
+				<h2 class="library-title">Library</h2>
+				
+				<!-- Integrated 2D Bookshelf -->
+				<div class="bookshelf-inline">
+					<div class="shelf-container">
+						<!-- First Shelf -->
+						<div class="books-row-inline">
+							<div class="book-inline book-1-inline" onclick="openProject('./game/index.html')">
+								<div class="book-spine-inline">NUMBERS<br>GAME</div>
+								<div class="book-tooltip-inline">
+									<strong>AndroMom Numbers Game</strong><br>
+									Interactive learning experience
+								</div>
+							</div>
+							
+							<div class="book-inline book-2-inline" onclick="openProject('./angry-birds/index.html')">
+								<div class="book-spine-inline">ANGRY<br>BIRDS</div>
+								<div class="book-tooltip-inline">
+									<strong>Angry Birds Unity</strong><br>
+									Physics-based game built in Unity
+								</div>
+							</div>
+							
+							<div class="book-inline book-3-inline" onclick="openProject('./family-tree/index.html')">
+								<div class="book-spine-inline">FAMILY<br>TREE</div>
+								<div class="book-tooltip-inline">
+									<strong>Family Tree Visualization</strong><br>
+									Interactive family relationships
+								</div>
+							</div>
+							
+							<div class="book-inline book-6-inline" onclick="openProject('https://coach-log-a4c54.web.app/', true)">
+								<div class="book-spine-inline">COACH<br>LOG<br>HISTORY</div>
+								<div class="book-tooltip-inline">
+									<strong>Coach Log History</strong><br>
+									Coaching session tracking app
+								</div>
+							</div>
+							
+							<div class="book-inline book-7-inline" onclick="openProject('https://rb-poker-283b3.web.app/', true)">
+								<div class="book-spine-inline">SIMPLE<br>POKER</div>
+								<div class="book-tooltip-inline">
+									<strong>Simple Poker</strong><br>
+									Online poker game application
+								</div>
+							</div>
+						</div>
+						<div class="shelf-inline"></div>
+						
+						<!-- Second Shelf -->
+						<div class="books-row-inline">
+							<div class="book-inline book-4-inline" onclick="openProject('http://akhimb.blogspot.com/', true)">
+								<div class="book-spine-inline">MIRAGE<br>BLOG</div>
+								<div class="book-tooltip-inline">
+									<strong>Mirage - Personal Blog</strong><br>
+									Thoughts, experiences & insights
+								</div>
+							</div>
+							
+							<div class="book-inline book-5-inline" onclick="openProject('./game/privacy.html')">
+								<div class="book-spine-inline">PRIVACY<br>POLICY</div>
+								<div class="book-tooltip-inline">
+									<strong>Privacy Policy</strong><br>
+									AndroMom Numbers Game policy
+								</div>
+							</div>
+						</div>
+						<div class="shelf-inline"></div>
+					</div>
 				</div>
 			</div>
-			
-
-
-		</div>
-		<div class="sections">
-				<h2 class="section-title">Other Roles</h2>
-				
-				<div class="list-card">
-					<div>
-						<span>Blogger | Animator | Dad</span>
-					</div>
-					<div>
-						<a href="http://akhimb.blogspot.com/">mirage - my blog</a>
-					</div>
-					<div>
-						<a href="./game/index.html">Open Game - AndroMom Numbers</a>
-						<a href="./game/privacy.html">AndroMom - Numbers - Privacy Policy</a>
-						<a href="./angry-birds/index.html">Unity - Angry Birds - Test Game</a>
-					</div>
-					<div>
-						<a href="./family-tree/index.html"> Family Tree - Experiment</a>
-					</div>
-				</div>	
-
 		</div>
 	</div>
 
 
 	<br><br>
 
+	<script>
+		function openProject(url, isExternal = false) {
+			// Add click animation
+			event.target.closest('.book-inline').style.transform = 'translateY(-8px) scale(1.1)';
+			
+			setTimeout(() => {
+				if (isExternal) {
+					window.open(url, '_blank');
+				} else {
+					window.location.href = url;
+				}
+			}, 200);
+		}
+	</script>
 
 </body>
 </html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhi M B - Digital Library</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* 2D Bookshelf Styles */
+        .bookshelf-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .bookshelf-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .bookshelf-header h1 {
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .bookshelf-header p {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .back-to-main {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4A90E2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .back-to-main:hover {
+            background: #357abd;
+            color: white;
+        }
+
+        .bookshelf {
+            background: linear-gradient(to bottom, #8B4513 0%, #654321 100%);
+            border-radius: 10px;
+            padding: 30px 20px;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .shelf {
+            background: linear-gradient(to bottom, #D2691E 0%, #8B4513 100%);
+            height: 12px;
+            margin: 150px 0 20px 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .shelf:first-child {
+            margin-top: 20px;
+        }
+
+        .shelf::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #F4A460, #D2691E, #F4A460);
+            border-radius: 2px;
+        }
+
+        .books-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            height: 140px;
+            padding: 0 20px;
+            margin-bottom: -20px;
+            gap: 12px;
+        }
+
+        .book {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 3px 3px 0 0;
+            box-shadow: 
+                2px 0 5px rgba(0,0,0,0.2),
+                inset -2px 0 3px rgba(0,0,0,0.1);
+        }
+
+        .book:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 
+                2px 5px 15px rgba(0,0,0,0.3),
+                inset -2px 0 3px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .book-spine {
+            padding: 15px 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.2;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        /* Individual book styles */
+        .book-1 {
+            background: linear-gradient(to right, #4A90E2 0%, #2E5C8A 100%);
+            width: 80px;
+            height: 120px;
+        }
+
+        .book-2 {
+            background: linear-gradient(to right, #E74C3C 0%, #A93226 100%);
+            width: 85px;
+            height: 130px;
+        }
+
+        .book-3 {
+            background: linear-gradient(to right, #2ECC71 0%, #229954 100%);
+            width: 75px;
+            height: 125px;
+        }
+
+        .book-4 {
+            background: linear-gradient(to right, #F39C12 0%, #D68910 100%);
+            width: 70px;
+            height: 135px;
+        }
+
+        .book-5 {
+            background: linear-gradient(to right, #9B59B6 0%, #7D3C98 100%);
+            width: 90px;
+            height: 110px;
+        }
+
+        .book-6 {
+            background: linear-gradient(to right, #17A2B8 0%, #138496 100%);
+            width: 75px;
+            height: 140px;
+        }
+
+        .book-7 {
+            background: linear-gradient(to right, #28A745 0%, #1E7E34 100%);
+            width: 80px;
+            height: 115px;
+        }
+
+        .book-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 20;
+            margin-bottom: 10px;
+        }
+
+        .book-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(0,0,0,0.9);
+        }
+
+        .book:hover .book-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            color: #D2691E;
+            opacity: 0.7;
+        }
+
+        /* Responsive design */
+        @media(max-width: 768px) {
+            .bookshelf-container {
+                margin: 20px;
+                padding: 15px;
+            }
+            
+            .bookshelf-header h1 {
+                font-size: 36px;
+            }
+            
+            .books-row {
+                padding: 0 10px;
+                gap: 8px;
+            }
+            
+            .book {
+                transform: scale(0.9);
+            }
+            
+            .book:hover {
+                transform: translateY(-8px) scale(0.95);
+            }
+        }
+
+        @media(max-width: 425px) {
+            .bookshelf-header h1 {
+                font-size: 28px;
+            }
+            
+            .books-row {
+                gap: 6px;
+            }
+            
+            .book {
+                transform: scale(0.8);
+            }
+            
+            .book:hover {
+                transform: translateY(-5px) scale(0.85);
+            }
+        }
+
+        .library-footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="bookshelf-container">
+        <div class="bookshelf-header">
+            <h1>📚 Digital Library</h1>
+            <p>Click on any book to explore my projects and work</p>
+            <a href="./index.html" class="back-to-main">← Back to Main Page</a>
+        </div>
+
+        <div class="bookshelf">
+            <div class="decorative-elements">📖✨</div>
+            
+            <!-- First Shelf -->
+            <div class="books-row">
+                <div class="book book-1" onclick="openProject('./game/index.html')">
+                    <div class="book-spine">NUMBERS<br>GAME</div>
+                    <div class="book-tooltip">
+                        <strong>AndroMom Numbers Game</strong><br>
+                        Interactive learning experience
+                    </div>
+                </div>
+                
+                <div class="book book-2" onclick="openProject('./angry-birds/index.html')">
+                    <div class="book-spine">ANGRY<br>BIRDS</div>
+                    <div class="book-tooltip">
+                        <strong>Angry Birds Unity</strong><br>
+                        Physics-based game built in Unity
+                    </div>
+                </div>
+                
+                <div class="book book-3" onclick="openProject('./family-tree/index.html')">
+                    <div class="book-spine">FAMILY<br>TREE</div>
+                    <div class="book-tooltip">
+                        <strong>Family Tree Visualization</strong><br>
+                        Interactive family relationships
+                    </div>
+                </div>
+                
+                <div class="book book-6" onclick="openProject('https://coach-log-a4c54.web.app/', true)">
+                    <div class="book-spine">COACH<br>LOG<br>HISTORY</div>
+                    <div class="book-tooltip">
+                        <strong>Coach Log History</strong><br>
+                        Coaching session tracking app
+                    </div>
+                </div>
+                
+                <div class="book book-7" onclick="openProject('https://rb-poker-283b3.web.app/', true)">
+                    <div class="book-spine">SIMPLE<br>POKER</div>
+                    <div class="book-tooltip">
+                        <strong>Simple Poker</strong><br>
+                        Online poker game application
+                    </div>
+                </div>
+            </div>
+            <div class="shelf"></div>
+            
+            <!-- Second Shelf -->
+            <div class="books-row">
+                <div class="book book-4" onclick="openProject('http://akhimb.blogspot.com/', true)">
+                    <div class="book-spine">MIRAGE<br>BLOG</div>
+                    <div class="book-tooltip">
+                        <strong>Mirage - Personal Blog</strong><br>
+                        Thoughts, experiences & insights
+                    </div>
+                </div>
+                
+                <div class="book book-5" onclick="openProject('./game/privacy.html')">
+                    <div class="book-spine">PRIVACY<br>POLICY</div>
+                    <div class="book-tooltip">
+                        <strong>Privacy Policy</strong><br>
+                        AndroMom Numbers Game policy
+                    </div>
+                </div>
+            </div>
+            <div class="shelf"></div>
+        </div>
+        
+        <div class="library-footer">
+            <p><em>Each book represents a project or piece of work. Hover for details, click to explore!</em></p>
+        </div>
+    </div>
+
+    <script>
+        function openProject(url, isExternal = false) {
+            // Add click animation
+            event.target.closest('.book').style.transform = 'translateY(-15px) scale(1.1)';
+            
+            setTimeout(() => {
+                if (isExternal) {
+                    window.open(url, '_blank');
+                } else {
+                    window.location.href = url;
+                }
+            }, 200);
+        }
+
+        // Add some interactive sparkle effects
+        function addSparkle() {
+            const bookshelf = document.querySelector('.bookshelf');
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'absolute';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.fontSize = '12px';
+            sparkle.style.opacity = '0.7';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.animation = 'sparkleFloat 3s ease-out forwards';
+            
+            bookshelf.appendChild(sparkle);
+            
+            setTimeout(() => {
+                if (sparkle.parentNode) {
+                    sparkle.parentNode.removeChild(sparkle);
+                }
+            }, 3000);
+        }
+
+        // Add sparkle animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkleFloat {
+                0% { 
+                    opacity: 0.7; 
+                    transform: translateY(0) scale(1); 
+                }
+                50% { 
+                    opacity: 1; 
+                    transform: translateY(-20px) scale(1.2); 
+                }
+                100% { 
+                    opacity: 0; 
+                    transform: translateY(-40px) scale(0.8); 
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add random sparkles
+        setInterval(addSparkle, 2000);
+    </script>
+</body>
+</html>
