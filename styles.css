@@ -168,18 +168,11 @@ h1.name {
 
 .job-title {
 	vertical-align: top;
-	background: linear-gradient(145deg, rgba(212, 175, 55, 0.9) 0%, rgba(184, 134, 11, 0.9) 100%);
 	color: #2c1810;
 	font-weight: 600;
-	margin-top: 5px;
 	margin-left: 20px;
-	border-radius: 8px;
 	display: inline-block;
-	padding: 15px 25px;
-	box-shadow: 
-		0 4px 8px rgba(0, 0, 0, 0.3),
-		inset 0 1px 0 rgba(255, 255, 255, 0.2);
-	border: 1px solid rgba(255, 215, 0, 0.5);
+	padding: 15px 15px;
 }
 
 .email {
@@ -368,13 +361,9 @@ h1.name {
 }
 
 .book-page .hero .job-title {
-	background: linear-gradient(145deg, #d4af37 0%, #b8860b 100%);
 	color: #000000;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 700;
-	padding: 8px 16px;
-	margin-left: 12px;
-	border: 1px solid #8b4513;
 }
 
 .book-page .hero .email {
