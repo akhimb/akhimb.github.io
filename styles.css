@@ -960,7 +960,7 @@ li .description {
 		#8B4513 50%, 
 		#654321 100%);
 	height: 10px;
-	margin: 90px 0 15px 0;
+	margin: 5px 0 15px 0;
 	border-radius: 6px;
 	box-shadow: 
 		0 3px 6px rgba(0, 0, 0, 0.4),
@@ -995,7 +995,7 @@ li .description {
 	align-items: flex-end;
 	height: 80px;
 	padding: 0 15px;
-	margin-bottom: -15px;
+	margin-bottom: 0px;
 	gap: 10px;
 }
 
