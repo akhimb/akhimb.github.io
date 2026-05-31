@@ -51,13 +51,20 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/fractured-reality/assets/index-D6C0HvvP.js"></script>
+  <script type="module" crossorigin src="/fractured-reality/assets/index-B1uekTud.js"></script>
   <link rel="stylesheet" crossorigin href="/fractured-reality/assets/index-CLX-6B-V.css">
-</head>
+<link rel="manifest" href="/fractured-reality/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/fractured-reality/registerSW.js"></script></head>
 
 <body>
+  <div id="fullscreen-prompt" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 99999; flex-direction: column; justify-content: center; align-items: center; color: white; font-family: 'Orbitron', sans-serif;">
+    <h1 style="font-size: 24px; margin-bottom: 20px; text-align: center;">Idiminnal Taison</h1>
+    <p style="font-size: 16px; margin-bottom: 30px;">Tap anywhere to enter Fullscreen & Play</p>
+    <div style="font-size: 40px;">👆</div>
+  </div>
   <div id="app"></div>
   <script>
+    // PWA Service Worker Registration is handled by vite-plugin-pwa automatically,
+    // but we can leave this cleanup script if needed or remove it.
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(function(registrations) {
         for(let registration of registrations) {

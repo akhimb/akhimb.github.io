@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/fractured-reality/sw.js', { scope: '/fractured-reality/' })})}
