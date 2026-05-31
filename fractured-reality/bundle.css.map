@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/style.css"],
+  "sourcesContent": ["body {\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n  background-color: #000;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  width: 100vw;\r\n}\r\n\r\ncanvas {\r\n  display: block;\r\n}\r\n"],
+  "mappings": ";AAAA;AACE,UAAQ;AACR,WAAS;AACT,YAAU;AACV,oBAAkB;AAClB,WAAS;AACT,mBAAiB;AACjB,eAAa;AACb,UAAQ;AACR,SAAO;AACT;AAEA;AACE,WAAS;AACX;",
+  "names": []
+}
