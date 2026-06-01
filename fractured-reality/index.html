@@ -3,11 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/fractured-reality/vite.svg" />
+  <link rel="icon" type="image/png" href="/assets/characters/hero.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="apple-touch-icon" href="/pwa-192x192.png">
   <title>idiminnal-taison</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
@@ -51,9 +53,9 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/fractured-reality/assets/index-B1uekTud.js"></script>
-  <link rel="stylesheet" crossorigin href="/fractured-reality/assets/index-CLX-6B-V.css">
-<link rel="manifest" href="/fractured-reality/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/fractured-reality/registerSW.js"></script></head>
+  <script type="module" crossorigin src="/assets/index-BFUKYal5.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CLX-6B-V.css">
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
 
 <body>
   <div id="fullscreen-prompt" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 99999; flex-direction: column; justify-content: center; align-items: center; color: white; font-family: 'Orbitron', sans-serif;">
@@ -63,16 +65,7 @@
   </div>
   <div id="app"></div>
   <script>
-    // PWA Service Worker Registration is handled by vite-plugin-pwa automatically,
-    // but we can leave this cleanup script if needed or remove it.
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        for(let registration of registrations) {
-          registration.unregister();
-          console.log('Unregistered stale service worker.');
-        }
-      });
-    }
+    // Removed stale service worker unregister code so PWA install prompt works
   </script>
 </body>
 
