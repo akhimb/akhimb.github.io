@@ -2063,7 +2063,7 @@ var require_phaser = __commonJS({
                    * function preload ()
                    * {
                    *     this.load.path = 'assets/animations/aseprite/';
-                   *     this.load.aseprite('paladin', 'paladin.png', 'paladin.json');
+                   *     this.load.aseprite('paladin', 'paladin.webp', 'paladin.json');
                    * }
                    * ```
                    *
@@ -3670,7 +3670,7 @@ var require_phaser = __commonJS({
                    * function preload ()
                    * {
                    *     this.load.path = 'assets/animations/aseprite/';
-                   *     this.load.aseprite('paladin', 'paladin.png', 'paladin.json');
+                   *     this.load.aseprite('paladin', 'paladin.webp', 'paladin.json');
                    * }
                    * ```
                    *
@@ -66595,13 +66595,13 @@ var require_phaser = __commonJS({
                    *
                    * ```javascript
                    * this.load.setPath("images/sprites/");
-                   * this.load.image("ball", "ball.png");
-                   * this.load.image("tree", "level1/oaktree.png");
-                   * this.load.image("boom", "http://server.com/explode.png");
+                   * this.load.image("ball", "ball.webp");
+                   * this.load.image("tree", "level1/oaktree.webp");
+                   * this.load.image("boom", "http://server.com/explode.webp");
                    * ```
                    *
-                   * Would load the `ball` file from `images/sprites/ball.png` and the tree from
-                   * `images/sprites/level1/oaktree.png` but the file `boom` would load from the URL
+                   * Would load the `ball` file from `images/sprites/ball.webp` and the tree from
+                   * `images/sprites/level1/oaktree.webp` but the file `boom` would load from the URL
                    * given as it's an absolute URL.
                    *
                    * Please note that the path is added before the filename but *after* the baseURL (if set.)
@@ -141767,42 +141767,42 @@ var SPRITE_KEYS = {
 };
 var ASSET_PATHS = {
   // Tilesets
-  TILESET: "/assets/tileset.png",
-  TEA_SHOP_FLOOR: "/assets/tiles/tea_shop_floor.png",
-  TEA_SHOP_WALL: "/assets/tiles/tea_shop_wall.png",
-  TEA_SHOP_COUNTER: "/assets/tiles/tea_shop_counter.png",
+  TILESET: "/assets/tileset.webp",
+  TEA_SHOP_FLOOR: "/assets/tiles/tea_shop_floor.webp",
+  TEA_SHOP_WALL: "/assets/tiles/tea_shop_wall.webp",
+  TEA_SHOP_COUNTER: "/assets/tiles/tea_shop_counter.webp",
   // Characters
-  JAISON: "/assets/characters/jaison-edit.png",
-  JAISON_MIRROR: "/assets/characters/jaison-edit_mirror.png",
-  SAAJAN: "/assets/characters/SI_Saajan.png",
-  NEPHEW: "/assets/characters/nephew.png",
-  HERO: "/assets/characters/hero-edit.png",
-  HERO_MIRROR: "/assets/characters/hero-edit_mirror.png",
-  DASAN: "/assets/characters/dasan.png",
-  DASAN_MIRROR: "/assets/characters/dasan_mirror.png",
-  BOSS: "/assets/characters/boss.png",
-  BOSS_MIRROR: "/assets/characters/boss_mirror.png",
-  SAROJ_KUMAR: "/assets/characters/saroj_kumar.png",
-  PACHALAM_BHASI: "/assets/characters/pachalam_bhasi.png",
-  HAT_BASE: "/assets/accessories/hat_base.png",
-  BROWN_HAT: "/assets/accessories/brown_hat.png",
-  BLACK_HAT: "/assets/accessories/black_hat.png",
-  HAIR_BASE: "/assets/accessories/hair/base.png",
-  HAIR_GREEN: "/assets/accessories/hair/green-hair.png",
-  SHIRT_BASE: "/assets/accessories/shirts/base.png",
-  SHIRT_BLUE: "/assets/accessories/shirts/blue.png",
-  TREE_BRANCH: "/assets/tileset.png",
+  JAISON: "/assets/characters/jaison-edit.webp",
+  JAISON_MIRROR: "/assets/characters/jaison-edit_mirror.webp",
+  SAAJAN: "/assets/characters/SI_Saajan.webp",
+  NEPHEW: "/assets/characters/nephew.webp",
+  HERO: "/assets/characters/hero-edit.webp",
+  HERO_MIRROR: "/assets/characters/hero-edit_mirror.webp",
+  DASAN: "/assets/characters/dasan.webp",
+  DASAN_MIRROR: "/assets/characters/dasan_mirror.webp",
+  BOSS: "/assets/characters/boss.webp",
+  BOSS_MIRROR: "/assets/characters/boss_mirror.webp",
+  SAROJ_KUMAR: "/assets/characters/saroj_kumar.webp",
+  PACHALAM_BHASI: "/assets/characters/pachalam_bhasi.webp",
+  HAT_BASE: "/assets/accessories/hat_base.webp",
+  BROWN_HAT: "/assets/accessories/brown_hat.webp",
+  BLACK_HAT: "/assets/accessories/black_hat.webp",
+  HAIR_BASE: "/assets/accessories/hair/base.webp",
+  HAIR_GREEN: "/assets/accessories/hair/green-hair.webp",
+  SHIRT_BASE: "/assets/accessories/shirts/base.webp",
+  SHIRT_BLUE: "/assets/accessories/shirts/blue.webp",
+  TREE_BRANCH: "/assets/tileset.webp",
   // Placeholder (will use frame 2/Crate as branch for now)
   // Narrative NPCs (Placeholders for now, user to replace)
-  JOSEMON: "/assets/characters/nephew.png",
+  JOSEMON: "/assets/characters/nephew.webp",
   // Placeholder (Kids)
-  SHAJI_PAPPAN: "/assets/characters/hero-edit.png",
+  SHAJI_PAPPAN: "/assets/characters/hero-edit.webp",
   // Placeholder (Adult Male)
-  DAMU: "/assets/characters/dasan.png",
+  DAMU: "/assets/characters/dasan.webp",
   // Placeholder
-  PRANCHIYETTAN: "/assets/characters/SI_Saajan.png",
+  PRANCHIYETTAN: "/assets/characters/SI_Saajan.webp",
   // Placeholder
-  DINESAN: "/assets/characters/pachalam_bhasi.png",
+  DINESAN: "/assets/characters/pachalam_bhasi.webp",
   // Updated with new Bhasi sprite
   // Audio
   THEME: "/assets/sounds/theme.mp3",
@@ -141828,24 +141828,24 @@ var ASSET_PATHS = {
   CLIMAX_MUSIC: "/assets/sounds/climax-muic.mp3",
   USHA_AUDIO: "/assets/sounds/usha-audio.mp3",
   SWORD_FLUSH: "/assets/sounds/SwordToFlush.wav",
-  TEST_SHEET: "/assets/Test-Sprite.png",
-  KSRTC_BUS: "/assets/Test-Sprite.png",
-  KSRTC_LORRY: "/assets/KSRTC-LORRI.png",
-  CHAYAKADA: "/assets/Chayakada.png",
-  SPEAR: "/assets/spear.png",
-  SAINT_GEORGE_IDOL: "/assets/saint_george_idol.png",
-  LEVEL3_BUS: "/assets/level3_bus_rooftop.png",
-  LEVEL3_BG: "/assets/level3_background.png",
-  LEVEL3_TRUNK: "/assets/level3_trunk.png",
-  POROTTA_1: "/assets/animations/porotta (1).png",
-  POROTTA_2: "/assets/animations/porotta (2).png",
-  POROTTA_3: "/assets/animations/porotta (3).png",
-  VINAYAKAN: "/assets/characters/vinayakan.png",
-  HUB_MAP: "/assets/hub_route_map.png",
-  POLICE_STATION_BG: "/assets/backgrounds/police_record_room_bg.png",
-  EVIDENCE_GUM: "/assets/props/jackfruit_gum_evidence.png",
-  HELICOPTER_PROP: "/assets/props/cardboard_helicopter.png",
-  SCRIPT_PROJECTILE: "/assets/props/script_projectile.png"
+  TEST_SHEET: "/assets/Test-Sprite.webp",
+  KSRTC_BUS: "/assets/Test-Sprite.webp",
+  KSRTC_LORRY: "/assets/KSRTC-LORRI.webp",
+  CHAYAKADA: "/assets/Chayakada.webp",
+  SPEAR: "/assets/spear.webp",
+  SAINT_GEORGE_IDOL: "/assets/saint_george_idol.webp",
+  LEVEL3_BUS: "/assets/level3_bus_rooftop.webp",
+  LEVEL3_BG: "/assets/level3_background.webp",
+  LEVEL3_TRUNK: "/assets/level3_trunk.webp",
+  POROTTA_1: "/assets/animations/porotta (1).webp",
+  POROTTA_2: "/assets/animations/porotta (2).webp",
+  POROTTA_3: "/assets/animations/porotta (3).webp",
+  VINAYAKAN: "/assets/characters/vinayakan.webp",
+  HUB_MAP: "/assets/hub_route_map.webp",
+  POLICE_STATION_BG: "/assets/backgrounds/police_record_room_bg.webp",
+  EVIDENCE_GUM: "/assets/props/jackfruit_gum_evidence.webp",
+  HELICOPTER_PROP: "/assets/props/cardboard_helicopter.webp",
+  SCRIPT_PROJECTILE: "/assets/props/script_projectile.webp"
 };
 var SPRITE_CONFIG = {
   CHARACTER: {
@@ -142375,9 +142375,9 @@ var LEVEL1_DATA = {
     }
   },
   "nextLevel": "Level2",
-  "backgroundImage": "assets/level1_background.png",
+  "backgroundImage": "assets/level1_background.webp",
   "customAssets": [],
-  "thumbnail": "assets/level1_thumbnail.png",
+  "thumbnail": "assets/level1_thumbnail.webp",
   "bundledAssets": []
 };
 
@@ -142669,9 +142669,9 @@ var LEVEL2_DATA = {
     }
   },
   "nextLevel": "Level3",
-  "backgroundImage": "assets/level2_background.png",
+  "backgroundImage": "assets/level2_background.webp",
   "customAssets": [],
-  "thumbnail": "level2_thumbnail.png",
+  "thumbnail": "level2_thumbnail.webp",
   "bundledAssets": []
 };
 
@@ -142793,9 +142793,9 @@ var LEVEL3_DATA = {
     }
   },
   "nextLevel": "Level4",
-  "backgroundImage": "assets/level3_background.png",
+  "backgroundImage": "assets/level3_background.webp",
   "customAssets": [],
-  "thumbnail": "assets/level3_thumbnail.png",
+  "thumbnail": "assets/level3_thumbnail.webp",
   "bundledAssets": []
 };
 
@@ -142840,9 +142840,9 @@ var RECORD_ROOM_DATA = {
     }
   },
   "nextLevel": "LevelX",
-  "backgroundImage": "assets/record_room_background.png",
+  "backgroundImage": "assets/record_room_background.webp",
   "customAssets": [],
-  "thumbnail": "record_room_thumbnail.png",
+  "thumbnail": "record_room_thumbnail.webp",
   "bundledAssets": []
 };
 
@@ -144137,7 +144137,7 @@ var LevelLoader = class _LevelLoader {
       if (assetData) {
         scene.load.image(assetKey, assetData);
       } else {
-        scene.load.image(assetKey, `/assets/custom/${assetKey}.png`);
+        scene.load.image(assetKey, `/assets/custom/${assetKey}.webp`);
       }
     });
   }
@@ -144154,9 +144154,9 @@ var LevelLoader = class _LevelLoader {
     textures.forEach((texture) => {
       if (!scene.textures.exists(texture)) {
         if (texture === "tile_sheet") {
-          scene.load.spritesheet(texture, "/assets/tileset.png", SPRITE_CONFIG.TILESET);
+          scene.load.spritesheet(texture, "/assets/tileset.webp", SPRITE_CONFIG.TILESET);
         } else {
-          let path = `/assets/characters/${texture}.png`;
+          let path = `/assets/characters/${texture}.webp`;
           const TEXTURE_MAP = {
             "jaison": { path: ASSET_PATHS.JAISON, mirror: ASSET_PATHS.JAISON_MIRROR },
             "hero": { path: ASSET_PATHS.HERO, mirror: ASSET_PATHS.HERO_MIRROR },
@@ -147008,9 +147008,9 @@ var Level3 = class extends BaseLevel {
   preload() {
     super.preload();
     LevelLoader.preloadCustomAssets(this, this.customData || LEVEL3_DATA);
-    this.load.image(SPRITE_KEYS.LEVEL3_BG, "/assets/level3_background.png");
-    this.load.image(SPRITE_KEYS.LEVEL3_BUS, "/assets/level3_bus_rooftop.png");
-    this.load.image(SPRITE_KEYS.LEVEL3_TRUNK, "/assets/level3_trunk.png");
+    this.load.image(SPRITE_KEYS.LEVEL3_BG, "/assets/level3_background.webp");
+    this.load.image(SPRITE_KEYS.LEVEL3_BUS, "/assets/level3_bus_rooftop.webp");
+    this.load.image(SPRITE_KEYS.LEVEL3_TRUNK, "/assets/level3_trunk.webp");
   }
   create() {
     super.create();
@@ -147213,7 +147213,7 @@ var Level4 = class extends BaseLevel {
   preload() {
     super.preload();
     LevelLoader.preloadCustomAssets(this, this.customData || LEVEL4_DATA);
-    this.load.spritesheet(SPRITE_KEYS.KSRTC_LORRY, "/assets/KSRTC-LORRI.png", {
+    this.load.spritesheet(SPRITE_KEYS.KSRTC_LORRY, "/assets/KSRTC-LORRI.webp", {
       frameWidth: 768,
       frameHeight: 512
     });
@@ -147884,7 +147884,7 @@ var MainMenu = class extends Phaser.Scene {
     super("MainMenu");
   }
   preload() {
-    this.load.image("menu_bg", "/assets/menu_bg.jpeg");
+    this.load.image("menu_bg", "/assets/menu_bg.webp");
     this.load.image("spear", ASSET_PATHS.SPEAR);
     this.load.audio("dash", ASSET_PATHS.DASH);
     this.load.audio("theme", ASSET_PATHS.THEME);
@@ -151050,9 +151050,9 @@ var HUB_DATA = {
     }
   },
   "nextLevel": "LevelX",
-  "backgroundImage": "assets/hub_background.png",
+  "backgroundImage": "assets/hub_background.webp",
   "customAssets": [],
-  "thumbnail": "assets/hub_thumbnail.png",
+  "thumbnail": "assets/hub_thumbnail.webp",
   "bundledAssets": []
 };
 
@@ -153311,7 +153311,7 @@ var EditorScene = class extends import_phaser18.default.Scene {
       customImages.forEach(({ exportKey: exportKey2, data: data2 }) => {
         setTimeout(() => {
           const link = document.createElement("a");
-          link.download = `${exportKey2}.png`;
+          link.download = `${exportKey2}.webp`;
           link.href = data2;
           document.body.appendChild(link);
           link.click();
@@ -153362,8 +153362,8 @@ export const ${exportKey}: LevelData = ${json};`;
           "TeaShopScene": "teashop"
         };
         const _filePrefix = _prefixMap[levelName] ?? levelName.toLowerCase().replace(/\s+/g, "_");
-        const _bgFilename = `${_filePrefix}_background.png`;
-        const _thumbFilename = `${_filePrefix}_thumbnail.png`;
+        const _bgFilename = `${_filePrefix}_background.webp`;
+        const _thumbFilename = `${_filePrefix}_thumbnail.webp`;
         const sceneData = { ...data };
         if (sceneData.backgroundImage && sceneData.backgroundImage.startsWith("data:")) {
           const bgBase64 = sceneData.backgroundImage.split(",")[1];
@@ -153377,7 +153377,7 @@ export const ${exportKey}: LevelData = ${json};`;
         }
         sceneData.bundledAssets = customImages.map((c) => {
           const assetBase64 = c.data.split(",")[1];
-          zip.file(`assets/${c.exportKey}.png`, assetBase64, { base64: true });
+          zip.file(`assets/${c.exportKey}.webp`, assetBase64, { base64: true });
           return { key: c.exportKey };
         });
         zip.file("scene.json", JSON.stringify(sceneData, null, 2));
@@ -154552,21 +154552,21 @@ ${Math.round(e.x)},${Math.round(e.y)}`;
           if (sceneFile) {
             const jsonText = await sceneFile.async("text");
             const data = JSON.parse(jsonText);
-            const bgFilename = data.backgroundImage && !data.backgroundImage.startsWith("data:") ? data.backgroundImage : "background.png";
-            const bgFile = zip.file(bgFilename) ?? zip.file("background.png");
+            const bgFilename = data.backgroundImage && !data.backgroundImage.startsWith("data:") ? data.backgroundImage : "background.webp";
+            const bgFile = zip.file(bgFilename) ?? zip.file("background.webp");
             if (bgFile) {
               const b64 = await bgFile.async("base64");
               data.backgroundImage = `data:image/png;base64,${b64}`;
             }
-            const thumbFilename = data.thumbnail && !data.thumbnail.startsWith("data:") ? data.thumbnail : "thumbnail.png";
-            const thumbFile = zip.file(thumbFilename) ?? zip.file("thumbnail.png");
+            const thumbFilename = data.thumbnail && !data.thumbnail.startsWith("data:") ? data.thumbnail : "thumbnail.webp";
+            const thumbFile = zip.file(thumbFilename) ?? zip.file("thumbnail.webp");
             if (thumbFile) {
               const b64 = await thumbFile.async("base64");
               data.thumbnail = `data:image/png;base64,${b64}`;
             }
             if (data.bundledAssets && data.bundledAssets.length > 0) {
               for (const asset of data.bundledAssets) {
-                const assetFile = zip.file(`assets/${asset.key}.png`);
+                const assetFile = zip.file(`assets/${asset.key}.webp`);
                 if (assetFile) {
                   const b64 = await assetFile.async("base64");
                   asset.data = `data:image/png;base64,${b64}`;
@@ -154633,7 +154633,7 @@ ${Math.round(e.x)},${Math.round(e.y)}`;
     if (dataToLoad.objects?.props) dataToLoad.objects.props.forEach((p) => check(p.texture));
     if (missingKeys.length > 0) {
       missingKeys.forEach((key) => {
-        this.load.image(key, `assets/custom/${key}.png`);
+        this.load.image(key, `assets/custom/${key}.webp`);
       });
       this.load.once("complete", () => {
         this.buildLevel(dataToLoad, 0);
@@ -155035,7 +155035,7 @@ ${Math.round(e.x)},${Math.round(e.y)}`;
       let filesToLoad = 0;
       customAssets.forEach((asset) => {
         if (!this.textures.exists(asset.key)) {
-          this.load.image(asset.key, `assets/${asset.key}.png`);
+          this.load.image(asset.key, `assets/${asset.key}.webp`);
           filesToLoad++;
         }
       });
@@ -155704,13 +155704,13 @@ var AvatarEditor = class extends import_phaser20.default.Scene {
   }
   preload() {
     LevelLoader.preloadAvatarAssets(this);
-    this.load.image("icon_hair", "/assets/icons/hair.png");
-    this.load.image("icon_hat", "/assets/icons/hat.png");
-    this.load.image("icon_shirt", "/assets/icons/shirt.png");
-    this.load.image("icon_pants", "/assets/icons/pants.png");
-    this.load.image("icon_shoes", "/assets/icons/shoe.png");
-    this.load.image("icon_glasses", "/assets/icons/glasses.png");
-    this.load.image("icon_mask", "/assets/icons/mask.png");
+    this.load.image("icon_hair", "/assets/icons/hair.webp");
+    this.load.image("icon_hat", "/assets/icons/hat.webp");
+    this.load.image("icon_shirt", "/assets/icons/shirt.webp");
+    this.load.image("icon_pants", "/assets/icons/pants.webp");
+    this.load.image("icon_shoes", "/assets/icons/shoe.webp");
+    this.load.image("icon_glasses", "/assets/icons/glasses.webp");
+    this.load.image("icon_mask", "/assets/icons/mask.webp");
   }
   create() {
     const width = this.scale.width;
