@@ -152,6 +152,32 @@
 				}
 			}, 200);
 		}
+
+		// ── Service Worker: auto-update without hard refresh ──────────────────
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/sw.js')
+					.then(registration => {
+						// Check for updates every 60 s while the page is open
+						setInterval(() => registration.update(), 60 * 1000);
+
+						registration.addEventListener('updatefound', () => {
+							const newWorker = registration.installing;
+							if (!newWorker) return;
+							console.log('[SW] Update found — new version installing...');
+						});
+					});
+
+				// When new SW takes control, reload to serve fresh assets
+				let refreshing = false;
+				navigator.serviceWorker.addEventListener('controllerchange', () => {
+					if (refreshing) return;
+					refreshing = true;
+					console.log('[SW] New version active — reloading page.');
+					window.location.reload();
+				});
+			});
+		}
 	</script>
 
 </body>
