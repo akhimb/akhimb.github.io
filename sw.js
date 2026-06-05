@@ -39,6 +39,17 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (url.origin !== location.origin) return;
 
+  // Do not intercept requests for subfolder projects/games to prevent conflicts
+  const path = url.pathname;
+  if (
+    path === '/fractured-reality' || path.startsWith('/fractured-reality/') ||
+    path === '/game' || path.startsWith('/game/') ||
+    path === '/angry-birds' || path.startsWith('/angry-birds/') ||
+    path === '/family-tree' || path.startsWith('/family-tree/')
+  ) {
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
       .then(networkResponse => {
