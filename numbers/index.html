@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#233928">
+  <meta name="description" content="Toddler Number Blackboard - Learn writing numbers 0 to 9 with ASMR chalk drawing and playful counting games!">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NumberGame">
+  
+  <title>Number Blackboard • ASMR Toddler Game</title>
+  
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="manifest" href="./manifest.json">
+  
+  <!-- Modern kid-friendly fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@400;600;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  
+  <script type="module" crossorigin src="/assets/index-BJe52Vhu.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-rBPVM342.css">
+</head>
+<body>
+  <div id="app" class="game-container">
+    <!-- Top Navigation Bar -->
+    <header id="game-header" class="game-header">
+      <div class="header-left">
+        <button id="btn-home" class="btn-icon" aria-label="Go to menu" title="Home">
+          <span class="icon">🏡</span>
+        </button>
+        <button id="btn-levels" class="btn-pill" aria-label="Level select">
+          <span class="pill-icon">🗺️</span>
+          <span id="header-level-name">Levels</span>
+        </button>
+      </div>
+      
+      <div class="header-center">
+        <div id="mode-switcher" class="mode-tabs">
+          <button id="tab-draw" class="tab-btn active" data-mode="draw">
+            <span class="tab-emoji">✏️</span>
+            <span class="tab-text">Draw Chalk</span>
+          </button>
+          <button id="tab-count" class="tab-btn" data-mode="count">
+            <span class="tab-emoji">🎈</span>
+            <span class="tab-text">Count &amp; Play</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <div class="stars-display" id="stars-display" title="Stars Earned">
+          <span class="star-icon">⭐</span>
+          <span id="stars-counter">0</span>
+        </div>
+        <button id="btn-sound" class="btn-icon" aria-label="Toggle Sound" title="Sound Mute/Unmute">
+          <span id="sound-icon" class="icon">🔊</span>
+        </button>
+        <button id="btn-install" class="btn-pill btn-install hidden" aria-label="Install App">
+          <span>📲 Install</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Screens Container -->
+    <main id="screen-container" class="screen-container">
+      <!-- 1. Home / Menu Screen -->
+      <section id="screen-menu" class="screen active">
+        <div class="menu-hero">
+          <div class="blackboard-title-card">
+            <div class="chalk-badge">Chalkboard Numbers ✏️</div>
+            <h1 class="game-title">Number Playground</h1>
+            <p class="game-subtitle">ASMR Chalk Drawing &amp; Counting for Toddlers</p>
+          </div>
+
+          <div class="menu-characters">
+            <div class="char-bubble bounce-1">
+              <img src="./assets/images/One-Giraffe.png" alt="Giraffe" class="char-img">
+              <span class="char-tag">1 Giraffe</span>
+            </div>
+            <div class="char-bubble bounce-2">
+              <img src="./assets/images/Number 2 - Duck.png" alt="Duck" class="char-img">
+              <span class="char-tag">2 Ducks</span>
+            </div>
+            <div class="char-bubble bounce-3">
+              <img src="./assets/images/Number 3 - Sea Horse.png" alt="Sea Horse" class="char-img">
+              <span class="char-tag">3 Seahorses</span>
+            </div>
+          </div>
+
+          <div class="menu-actions">
+            <button id="btn-play" class="btn-huge btn-play">
+              <span class="play-icon">▶</span>
+              <span>PLAY GAME</span>
+            </button>
+            <div class="sub-actions">
+              <button id="btn-gift-room" class="btn-secondary">
+                <span>🎁 Surprise Gift Room</span>
+              </button>
+              <button id="btn-info" class="btn-secondary">
+                <span>ℹ️ Parent Info</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Level Select Screen -->
+      <section id="screen-levels" class="screen">
+        <div class="screen-header-inner">
+          <h2 class="section-title">Select a Number</h2>
+          <p class="section-desc">Trace with ASMR chalk or play fun counting challenges!</p>
+        </div>
+        <div id="levels-grid" class="levels-grid">
+          <!-- Dynamically populated numbers 0-9 + Gift level -->
+        </div>
+      </section>
+
+      <!-- 3. Drawing / Chalkboard Screen -->
+      <section id="screen-draw" class="screen">
+        <div class="chalkboard-layout-wrapper">
+          <!-- Left Companion Card: Number Asset on the Left -->
+          <div class="draw-left-card" id="draw-left-card">
+            <div class="card-character-preview">
+              <img id="draw-character-img" class="draw-character-img" src="" alt="Number Character Asset">
+            </div>
+            <div class="draw-character-meta">
+              <h3 id="draw-character-title" class="character-title">Number 1</h3>
+              <p id="draw-character-name" class="character-subtitle">Tall Giraffe</p>
+              <button id="btn-draw-pronounce" class="btn-pill btn-listen" title="Listen to pronunciation">
+                <span>🔊 Listen</span>
+              </button>
+            </div>
+            <div class="draw-order-hint">
+              <span class="hint-icon">👉</span>
+              <span>Trace circles in order: 1 ➔ 2 ➔ 3</span>
+            </div>
+          </div>
+
+          <!-- Main Chalkboard Frame -->
+          <div class="chalkboard-frame">
+            <div class="chalkboard-wood-border">
+              <div class="blackboard-surface" id="blackboard-surface">
+                <!-- Chalk canvas -->
+                <canvas id="chalk-canvas"></canvas>
+                
+                <!-- Dotted tracing guide & checkpoints layer -->
+                <svg id="guide-svg" class="guide-svg"></svg>
+              
+              <!-- Animated helper hand pointer -->
+              <div id="helper-hand" class="helper-hand hidden">
+                <span class="hand-pointer">👉</span>
+              </div>
+
+              <!-- Top blackboard HUD -->
+              <div class="board-hud">
+                <div class="hud-bubble">
+                  <span class="hud-label">Trace:</span>
+                  <span id="current-number-display" class="hud-number">1</span>
+                </div>
+                <div class="hud-progress">
+                  <div id="checkpoints-dots" class="checkpoints-dots"></div>
+                </div>
+                <button id="btn-repeat-demo" class="btn-tool" title="Show how to write">
+                  <span>💡 Hint</span>
+                </button>
+                <button id="btn-erase-all" class="btn-tool btn-sponge" title="Erase blackboard">
+                  <span class="sponge-icon">🧽</span>
+                  <span>Erase</span>
+                </button>
+              </div>
+
+              <!-- ASMR Chalk dust particles layer -->
+              <canvas id="particles-canvas"></canvas>
+            </div>
+
+            <!-- Bottom Wooden Chalk Tray -->
+            <div class="chalk-tray">
+              <div class="tray-label">Chalk Colors:</div>
+              <div class="chalk-pieces" id="chalk-pieces">
+                <button class="chalk-stick active" data-color="#ffffff" style="--chalk-color: #ffffff;" title="White Chalk"></button>
+                <button class="chalk-stick" data-color="#fff275" style="--chalk-color: #fff275;" title="Yellow Chalk"></button>
+                <button class="chalk-stick" data-color="#70d6ff" style="--chalk-color: #70d6ff;" title="Sky Blue Chalk"></button>
+                <button class="chalk-stick" data-color="#ff9ebb" style="--chalk-color: #ff9ebb;" title="Pink Chalk"></button>
+                <button class="chalk-stick" data-color="#95f9c3" style="--chalk-color: #95f9c3;" title="Mint Chalk"></button>
+                <button class="chalk-stick" data-color="#ffd166" style="--chalk-color: #ffd166;" title="Orange Chalk"></button>
+              </div>
+              <div class="tray-tools">
+                <button id="btn-speak-number" class="btn-tool" title="Listen to number">
+                  <span>🔊 Pronounce</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Counting & Quiz Screen (Modern Game Design, NO Checkboxes) -->
+      <section id="screen-count" class="screen">
+        <div class="count-game-container">
+          <!-- Voice prompt & title banner -->
+          <div class="count-prompt-card">
+            <button id="btn-replay-prompt" class="btn-speaker" title="Replay voice prompt">
+              <span>🔊</span>
+            </button>
+            <div class="prompt-text-group">
+              <h2 id="count-question-title" class="prompt-title">Count the animals!</h2>
+              <p id="count-instruction" class="prompt-sub">Tap each item to count, then tap the right number!</p>
+            </div>
+          </div>
+
+          <!-- Interactive Counting Playground -->
+          <div class="count-stage-wrapper">
+            <div id="count-stage" class="count-stage">
+              <!-- Dynamically generated tappable items with bouncy animations -->
+            </div>
+            <div class="count-counter-badge">
+              <span class="counter-label">Tapped:</span>
+              <span id="tapped-counter-val" class="counter-num">0</span>
+            </div>
+          </div>
+
+          <!-- Bottom Control Bar: Learn reference cards + Number Selection Cards -->
+          <div class="count-bottom-bar">
+            <!-- Left: Animal Card -->
+            <div id="card-animal" class="feature-card mini-feature" role="button" tabindex="0" title="Tap to hear animal">
+              <div class="card-thumb">
+                <img id="feature-animal-img" src="" alt="Animal representation">
+              </div>
+              <div class="card-caption">
+                <span id="feature-animal-name">Ducks</span>
+                <span class="tap-hint">🔊 Tap</span>
+              </div>
+            </div>
+
+            <!-- Center: Modern 3D Number Selection Cards -->
+            <div class="options-wrapper">
+              <div class="options-header">How many did you count?</div>
+              <div id="options-grid" class="options-grid">
+                <!-- Big bouncy number cards [ 1 ] [ 2 ] [ 3 ] [ 4 ] -->
+              </div>
+            </div>
+
+            <!-- Right: Fingers Card -->
+            <div id="card-fingers" class="feature-card mini-feature" role="button" tabindex="0" title="Tap to hear fingers">
+              <div class="card-thumb fingers-thumb">
+                <span id="feature-fingers-display" class="fingers-emoji">✌️</span>
+              </div>
+              <div class="card-caption">
+                <span id="feature-fingers-name">2 Fingers</span>
+                <span class="tap-hint">🔊 Tap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Surprise Gift Room (Level 20 style celebration mini-game) -->
+      <section id="screen-gift" class="screen">
+        <div class="gift-room">
+          <div class="gift-header">
+            <h2>🎉 Surprise Toy Room! 🎉</h2>
+            <p>Tap the magic gift box to unwrap a surprise toy!</p>
+          </div>
+
+          <div class="gift-box-stage">
+            <div id="magic-gift-box" class="magic-gift-box" role="button" tabindex="0">
+              <img src="/assets/GiftBox-BckJQVJ3.png" alt="Magic Gift Box" class="gift-img">
+              <div class="tap-me-badge">Tap to Open! 🎁</div>
+            </div>
+
+            <!-- Unwrapped toy reveal modal / presentation -->
+            <div id="revealed-toy-container" class="revealed-toy-container hidden">
+              <div class="toy-halo"></div>
+              <img id="revealed-toy-img" src="/assets/SuperCar-CnY0HIJH.png" alt="Surprise Toy" class="revealed-toy-img">
+              <h3 id="revealed-toy-name" class="toy-name">Super Race Car!</h3>
+              <p class="toy-desc">You unlocked an awesome toy for your collection!</p>
+              <button id="btn-open-another" class="btn-huge btn-play">
+                <span>🔄 Play From Start For Next Toy!</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collection shelf -->
+          <div class="toy-shelf-container">
+            <h4>Your Toy Shelf (<span id="unlocked-toys-count">0</span> / 9 Collected):</h4>
+            <div id="toy-shelf" class="toy-shelf">
+              <div class="shelf-slot" data-toy="robot">
+                <img src="./assets/images/ToyRobot.png" alt="Beep-Boop Robot">
+                <span>Toy Robot</span>
+              </div>
+              <div class="shelf-slot" data-toy="duck">
+                <img src="./assets/images/ToyDuck.png" alt="Sunny Rubber Duck">
+                <span>Rubber Duck</span>
+              </div>
+              <div class="shelf-slot" data-toy="rocket">
+                <img src="./assets/images/ToyRocket.png" alt="Cosmic Explorer Rocket">
+                <span>Space Rocket</span>
+              </div>
+              <div class="shelf-slot" data-toy="dino">
+                <img src="./assets/images/ToyDino.png" alt="Chubby Baby Dino">
+                <span>Baby Dino</span>
+              </div>
+              <div class="shelf-slot" data-toy="car">
+                <img src="/assets/SuperCar-CnY0HIJH.png" alt="Super Car">
+                <span>Super Car</span>
+              </div>
+              <div class="shelf-slot" data-toy="superman">
+                <img src="/assets/SuperMan-Ci1ByWPM.png" alt="Super Man">
+                <span>Hero Man</span>
+              </div>
+              <div class="shelf-slot" data-toy="barbie">
+                <img src="/assets/Barbie-CsE0Vq9S.png" alt="Barbie Doll">
+                <span>Fashion Doll</span>
+              </div>
+              <div class="shelf-slot" data-toy="superwomen">
+                <img src="/assets/SuperWomen-CQhFv355.png" alt="Super Woman">
+                <span>Wonder Hero</span>
+              </div>
+              <div class="shelf-slot" data-toy="bear">
+                <img src="./assets/images/Bear.png" alt="Teddy Bear">
+                <span>Teddy Bear</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Parent Info Screen -->
+      <section id="screen-info" class="screen">
+        <div class="info-card">
+          <div class="info-header">
+            <h2>About Number Playground</h2>
+            <button id="btn-close-info" class="btn-icon">✕</button>
+          </div>
+          <div class="info-body">
+            <p><strong>Number Playground</strong> is a toddler-centric educational Progressive Web App designed to build early numeracy skills through multi-sensory learning:</p>
+            <ul>
+              <li><strong>ASMR Chalkboard Writing:</strong> Realistic chalk physics, gentle tactile vibration, and soothing scratchy chalk sound effects teach handwriting without stress or punishment.</li>
+              <li><strong>Interactive Counting:</strong> Replaces rigid checkboxes with joyful, tactile tap-and-bounce objects and big colorful choice cards.</li>
+              <li><strong>Real Spoken Voice:</strong> Natural spoken pronunciation for numbers, animals, and questions keeps toddlers engaged and learning correct pronunciation.</li>
+              <li><strong>Surprise Toys:</strong> Rewarding positive reinforcement to celebrate progress!</li>
+              <li><strong>Installable &amp; Offline:</strong> Play anywhere without needing internet.</li>
+            </ul>
+            <div class="info-footer">
+              <button id="btn-back-menu" class="btn-huge btn-play">
+                <span>Back to Game</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Celebration Overlay (Confetti & Victory Stars) -->
+    <div id="celebration-overlay" class="celebration-overlay hidden">
+      <div class="celebration-card">
+        <div class="star-burst">⭐ ⭐ ⭐</div>
+        <h2 id="celebration-title" class="celebration-title">Terrific Job!</h2>
+        <p id="celebration-subtitle" class="celebration-subtitle">You wrote the number 1!</p>
+        <div class="celebration-actions">
+          <button id="btn-next-level" class="btn-huge btn-celebration">
+            <span>Next Level ➔</span>
+          </button>
+          <button id="btn-replay-level" class="btn-secondary">
+            <span>🔄 Play Again</span>
+          </button>
+        </div>
+      </div>
+      <canvas id="confetti-canvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Vite entry script -->
+</body>
+</html>

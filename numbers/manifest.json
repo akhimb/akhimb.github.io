@@ -1,0 +1,26 @@
+{
+  "name": "Number Blackboard - ASMR Toddler Game",
+  "short_name": "NumberGame",
+  "description": "Learn numbers 0-9 with ASMR chalk drawing, interactive counting, and fun toddler rewards!",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#17231a",
+  "theme_color": "#233928",
+  "categories": ["education", "kids", "games"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
