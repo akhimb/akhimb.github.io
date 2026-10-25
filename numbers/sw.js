@@ -1,4 +1,4 @@
-const CACHE_NAME = 'number-blackboard-v1';
+const CACHE_NAME = 'number-blackboard-v2';
 
 const STATIC_ASSETS = [
   './',
