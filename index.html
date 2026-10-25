@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Its Me AKHI M B</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
 	<!-- Combined Container with Open Book on Left and Library on Right -->
@@ -21,11 +23,12 @@
 							<span class="email">mail@akhimb.com</span>
 
 							<h2 class="lead"> Full Stack Developer @ RedBlack, Infopark, Kochi </h2>
-							<p class="previous-experience">Worked as Project Engineer @ CDAC, Trivandrum From May 2014 - Dec 2020</p>
+							<p class="previous-experience">Worked as Project Engineer @ CDAC, Trivandrum From May 2014 -
+								Dec 2020</p>
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Right Page -->
 				<div class="book-page right-page">
 					<div class="page-content">
@@ -42,7 +45,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Book Spine/Binding -->
 				<div class="book-spine-center"></div>
 			</div>
@@ -52,7 +55,7 @@
 		<div class="right-section">
 			<div class="library-section">
 				<h2 class="library-title">Library</h2>
-				
+
 				<!-- Integrated 2D Bookshelf -->
 				<div class="bookshelf-inline">
 					<div class="shelf-container">
@@ -65,21 +68,15 @@
 									ASMR Toddler Chalk & Counting Game
 								</div>
 							</div>
-							<div class="book-inline book-1-inline" onclick="openProject('./game/index.html')">
-								<div class="book-spine-inline">NUMBERS<br>GAME</div>
-								<div class="book-tooltip-inline">
-									<strong>AndroMom Numbers Game</strong><br>
-									Interactive learning experience
-								</div>
-							</div>
-							<div class="book-inline book-fractured-inline" onclick="openProject('./fractured-reality/index.html')">
+							<div class="book-inline book-fractured-inline"
+								onclick="openProject('./fractured-reality/index.html')">
 								<div class="book-spine-inline">FRACTURED<br>REALITY</div>
 								<div class="book-tooltip-inline">
 									<strong>Fractured Reality</strong><br>
 									A new interactive game book
 								</div>
 							</div>
-							
+
 							<div class="book-inline book-2-inline" onclick="openProject('./angry-birds/index.html')">
 								<div class="book-spine-inline">ANGRY<br>BIRDS</div>
 								<div class="book-tooltip-inline">
@@ -89,7 +86,7 @@
 							</div>
 						</div>
 						<div class="shelf-inline"></div>
-						
+
 						<!-- Second Shelf -->
 						<div class="books-row-inline">
 							<div class="book-inline book-3-inline" onclick="openProject('./family-tree/index.html')">
@@ -99,16 +96,18 @@
 									Interactive family relationships
 								</div>
 							</div>
-							
-							<div class="book-inline book-6-inline" onclick="openProject('https://coach-log-a4c54.web.app/', true)">
+
+							<div class="book-inline book-6-inline"
+								onclick="openProject('https://coach-log-a4c54.web.app/', true)">
 								<div class="book-spine-inline">COACH<br>LOG<br>HISTORY</div>
 								<div class="book-tooltip-inline">
 									<strong>Coach Log History</strong><br>
 									Coaching session tracking app
 								</div>
 							</div>
-							
-							<div class="book-inline book-7-inline" onclick="openProject('https://rb-poker-283b3.web.app/', true)">
+
+							<div class="book-inline book-7-inline"
+								onclick="openProject('https://rb-poker-283b3.web.app/', true)">
 								<div class="book-spine-inline">SIMPLE<br>POKER</div>
 								<div class="book-tooltip-inline">
 									<strong>Simple Poker</strong><br>
@@ -117,17 +116,18 @@
 							</div>
 						</div>
 						<div class="shelf-inline"></div>
-						
+
 						<!-- Third Shelf -->
 						<div class="books-row-inline">
-							<div class="book-inline book-4-inline" onclick="openProject('http://akhimb.blogspot.com/', true)">
+							<div class="book-inline book-4-inline"
+								onclick="openProject('http://akhimb.blogspot.com/', true)">
 								<div class="book-spine-inline">MIRAGE<br>BLOG</div>
 								<div class="book-tooltip-inline">
 									<strong>Mirage - Personal Blog</strong><br>
 									Thoughts, experiences & insights
 								</div>
 							</div>
-							
+
 							<div class="book-inline book-5-inline" onclick="openProject('./game/privacy.html')">
 								<div class="book-spine-inline">PRIVACY<br>POLICY</div>
 								<div class="book-tooltip-inline">
@@ -150,7 +150,7 @@
 		function openProject(url, isExternal = false) {
 			// Add click animation
 			event.target.closest('.book-inline').style.transform = 'translateY(-8px) scale(1.1)';
-			
+
 			setTimeout(() => {
 				if (isExternal) {
 					window.open(url, '_blank');
@@ -188,4 +188,5 @@
 	</script>
 
 </body>
+
 </html>
