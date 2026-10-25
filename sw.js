@@ -1,6 +1,6 @@
 // Portfolio Service Worker — Network-First Strategy
 // Version bump this string on every deploy to bust old caches.
-const CACHE_VERSION = 'portfolio-v1';
+const CACHE_VERSION = 'portfolio-v2';
 const CACHE_NAME = `${CACHE_VERSION}`;
 
 // Assets to pre-cache on install
@@ -42,6 +42,7 @@ self.addEventListener('fetch', event => {
   // Do not intercept requests for subfolder projects/games to prevent conflicts
   const path = url.pathname;
   if (
+    path === '/numbers' || path.startsWith('/numbers/') ||
     path === '/fractured-reality' || path.startsWith('/fractured-reality/') ||
     path === '/game' || path.startsWith('/game/') ||
     path === '/angry-birds' || path.startsWith('/angry-birds/') ||
